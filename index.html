@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+</head>
+<body id="displayColor">
+    
+    <div class="colorPicker">
+        <input type="color" name="color" id="color-picker" onchange="getColor()">
+    </div>
+    <div class="color_Picker" id="colorDisplay"></div>
+    <div id="inner">
+
+    </div>
+
+    <script>
+        let colorPicker = document.getElementById('color-picker');
+        let colorDisplay = document.getElementById('colorDisplay');
+        let box = document.getElementById('inner');
+        let name = 'DR. Muhammad Ahmed';
+
+        function getColor() {
+            let selectedColor = colorPicker.value;
+            let colorCode = selectedColor.toUpperCase(); // Convert to uppercase for consistency
+            colorDisplay.innerHTML = `
+                <div style="margin-top:13px; background-color: ${selectedColor}; width: 150px; height: 50px;"></div>
+                <p>Color Code: ${colorCode}</p>
+            `;
+            box.innerHTML = `<div style="color: ${selectedColor}; width:250px; height:200px; font-weight: Bolder; letter-spacing: 2px;">${name.toUpperCase()}</div>`;
+        }
+    </script>
+</body>
+</html>
